@@ -1,4 +1,4 @@
-export function chart(mbti) {
+export function chart(mbtiList) {
 
 var chartDataLabelsOptions = {
 
@@ -15,13 +15,13 @@ var chartDataLabelsOptions = {
     }
 };
 
-    let mbtiList = [
-        {mbti:"INFP", cnt:5},
-        {mbti:"ISTP", cnt:7},
-        {mbti:"ENTJ", cnt:3},
-        {mbti:"ENTP", cnt:4},
-        {mbti:"INTP", cnt:1},
-    ]
+    // let mbtiList = [
+    //     {mbti:"INFP", cnt:5},
+    //     {mbti:"ISTP", cnt:7},
+    //     {mbti:"ENTJ", cnt:3},
+    //     {mbti:"ENTP", cnt:4},
+    //     {mbti:"INTP", cnt:1},
+    // ]
     // i = 13
     // e = 7
     // n = 13

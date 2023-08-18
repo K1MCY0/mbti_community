@@ -20,10 +20,6 @@
 	<section>
 		<div class="feature-photo">
 			<figure><img src="images/resources/timeline.png" alt="" style="height: 400px"></figure>
-			<div class="add-btn">
-				<span>1205 followers</span>
-				<a href="#" title="" data-ripple="">Add Friend</a>
-			</div>
 			<form class="edit-phto">
 				<i class="fa fa-camera-retro"></i>
 				<label class="fileContainer">
@@ -51,8 +47,8 @@
 						<div class="timeline-info">
 							<ul>
 								<li class="admin-name">
-								  <h5>CY</h5>
-								  <span>INFP</span>
+								  <h5  th:text="|${member.loginId}|">이름</h5>
+								  <span th:text="|${member.mbti}|">mbti</span>
 								</li>
 								<li>
 									<a class="active" href="mypage.html" title="" data-ripple="">my page</a>
@@ -84,20 +80,20 @@
 										<h4 class="widget-title">Edit info</h4>
 										<ul class="naves">
 											<li>
-												<i class="ti-info-alt"></i>
-												<a title="" href="edit-profile-basic.html">Basic info</a>
-											</li>
-											<li>
 												<i class="ti-heart"></i>
-												<a title="" href="edit-interest.html">My interests</a>
+												<a title="" href="edit-interest.html">위시 리스트</a>
 											</li>
 											<li>
-												<i class="ti-settings"></i>
-												<a title="" href="edit-account-setting.html">setting</a>
+												<i class="ti-info-alt"></i>
+												<a title="" href="mypage.html">내 정보</a>
+											</li>
+											<li>
+												<i class="ti-book"></i>
+												<a title="" href="edit-password.html">정보 수정</a>
 											</li>
 											<li>
 												<i class="ti-lock"></i>
-												<a title="" href="edit-password.html">change password</a>
+												<a title="" href="edit-password.html">비밀번호 수정</a>
 											</li>
 										</ul>
 									</div>
@@ -120,45 +116,20 @@
 												<li class="nav-item">
 													<a href="#location" class="nav-link" data-toggle="tab" >location</a>
 												</li>
-												<li class="nav-item">
-													<a href="#interest" class="nav-link" data-toggle="tab"  >interests</a>
-												</li>
 											</ul>
 											<div class="tab-content">
 												<div class="tab-pane fade show active" id="basic" >
 													<ul class="basics">
-														<li><i class="ti-user"></i>김철수</li>
-														<li><i class="ti-map-alt"></i>인천 부평</li>
-														<li><i class="ti-mobile"></i>010-1234-5678
-														<li><i class="ti-agenda"></i>ISTJ </li>
-														<li><i class="ti-email"></i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3c4553494e515d55507c59515d5550125f5351">[email&#160;protected]</a></li>
+														<li th:text="|${member.name}|"><i class="ti-user"></i>김철수</li>
+														<li th:text="|${member.phoneNumber}|"><i class="ti-mobile"></i>010-1234-5678
+														<li th:text="|${member.mbti}|"><i class="ti-agenda"></i>ISTJ </li>
+														<li th:text="|${member.email}|"><i class="ti-email"></i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3c4553494e515d55507c59515d5550125f5351">[email&#160;protected]</a></li>
 													</ul>
 												</div>
 												<div class="tab-pane fade" id="location" role="tabpanel">
 													<div class="location-map">
 														<div id="map-canvas"></div>
 													</div>
-												</div>
-												<div class="tab-pane fade" id="work" role="tabpanel">
-													<div>
-
-														<a href="#" title="">Envato</a>
-														<p>work as autohr in envato themeforest from 2013</p>
-														<ul class="education">
-															<li><i class="ti-facebook"></i> BSCS from Oxford University</li>
-															<li><i class="ti-twitter"></i> MSCS from Harvard Unversity</li>
-														</ul>
-													</div>
-												</div>
-												<div class="tab-pane fade" id="interest" role="tabpanel">
-													<ul class="basics">
-														<li>Footbal</li>
-														<li>internet</li>
-														<li>photography</li>
-														<li>Piano</li>
-														<li>Study</li>
-														<li>Book</li>
-													</ul>
 												</div>
 											</div>
 										</div>

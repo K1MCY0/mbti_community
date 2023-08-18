@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 
 
 <head>
@@ -9,10 +9,10 @@
     <meta name="keywords" content="" />
 	<title>Community</title>
 
-    <link rel="stylesheet" href="css/main.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/color.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/main.min.css" th:href="@{css/main.min.css}">
+    <link rel="stylesheet" href="css/style.css"  th:href="@{css/style.css}">
+    <link rel="stylesheet" href="css/color.css"  th:href="@{css/color.css}">
+    <link rel="stylesheet" href="css/responsive.css"  th:href="@{css/reponsive.css}">
 
 </head>
 <body>
@@ -97,8 +97,8 @@
 											<img src="images/resources/user.png" alt="">
 										</figure>
 										<div class="newpst-input">
-											<form method="post">
-												<textarea rows="2" placeholder=""></textarea>
+											<form action="index.html" th:action th:object="${community}" method="post">
+												<textarea rows="2" th:field="*{content}"></textarea>
 												<div class="attachments">
 													<ul>
 														<li>
@@ -145,10 +145,10 @@
 												<ins><a href="" title="">CY</a></ins>
 												<span>published:2023/08/15</span>
 											</div>
-											<div class="post-meta">
+											<div class="post-meta" th:each="community : ${communities}">
 												<img src="images/resources/user-post.jpg" alt="">
 												<div class="description">
-													<p>
+													<p th:text="|내용 : ${community.content}|">
 														<a href="#" title="">#INFP!</a> 나 고민이 있는데 들어줄 사람! 내 친구는 나랑 MBTI가 완전 정반대라서 이해를 못해줌,, 그래서 나 이해해줄 사람 찾고 있음ㅠㅠ
 													</p>
 												</div>
@@ -246,132 +246,132 @@
 										</div>
 									</div>
 								</div>
-								<div class="central-meta item">
-									<div class="user-post">
-										<div class="friend-info">
-											<figure>
-												<img src="images/resources/user.png" alt="">
-											</figure>
-											<div class="friend-name">
-												<ins><a href="" title="">상상</a></ins>
-												<span>published:2023/08/15M</span>
-											</div>s
-											<div class="post-meta">
-												<iframe src="https://player.vimeo.com/video/738932333?h=d043639320" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-												<div class="description">
-													<p>
-														애들아 이것 좀 한 번 봐바<a href="#" title="">#N vs S</a> N, S 특성 보여준 건데 어떤 것 같아?!
-													</p>
-												</div>
-												<div class="we-video-info">
-													<ul>
-														<li>
-															<span class="views" data-toggle="tooltip" title="views">
-																<i class="fa fa-eye"></i>
-																<ins>1.2k</ins>
-															</span>
-														</li>
-														<li>
-															<span class="comment" data-toggle="tooltip" title="Comments">
-																<i class="fa fa-comments-o"></i>
-																<ins>52</ins>
-															</span>
-														</li>
-														<li>
-															<span class="like" data-toggle="tooltip" title="like">
-																<i class="ti-heart"></i>
-																<ins>2.2k</ins>
-															</span>
-														</li>
-														<li>
-															<span class="dislike" data-toggle="tooltip" title="dislike">
-																<i class="ti-heart-broken"></i>
-																<ins>200</ins>
-															</span>
-														</li>
-														<li class="social-media">
-															<div class="menu">
-																<div class="btn trigger"><i class="fa fa-share-alt"></i></div>
-																<div class="rotater">
-																	<div class="btn btn-icon"><a href="#" title=""><i class="fa fa-facebook"></i></a></div>
-																</div>
-																<div class="rotater">
-																	<div class="btn btn-icon"><a href="#" title=""><i class="fa fa-twitter"></i></a></div>
-																</div>
-																<div class="rotater">
-																	<div class="btn btn-icon"><a href="#" title=""><i class="fa fa-instagram"></i></a>
-																	</div>
-																</div>
-															</div>
-														</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="coment-area">
-											<ul class="we-comet">
-												<li>
-													<div class="comet-avatar">
-														<img src="images/resources/user2.png" alt="">
-													</div>
-													<div class="we-comment">
-														<div class="coment-head">
-															<h5><a href="" title="">N이 되고싶은 S</a></h5>
-															<a class="we-reply" href="#" title="Reply"><i class="fa fa-reply"></i></a>
-														</div>
-														<p>나는 저 N의 상상력이 신기함,, </p>
-													</div>
+<!--								<div class="central-meta item">-->
+<!--									<div class="user-post">-->
+<!--										<div class="friend-info">-->
+<!--											<figure>-->
+<!--												<img src="images/resources/user.png" alt="">-->
+<!--											</figure>-->
+<!--											<div class="friend-name">-->
+<!--												<ins><a href="" title="">상상</a></ins>-->
+<!--												<span>published:2023/08/15M</span>-->
+<!--											</div>s-->
+<!--											<div class="post-meta">-->
+<!--												<iframe src="https://player.vimeo.com/video/738932333?h=d043639320" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
+<!--												<div class="description">-->
+<!--													<p>-->
+<!--														애들아 이것 좀 한 번 봐바<a href="#" title="">#N vs S</a> N, S 특성 보여준 건데 어떤 것 같아?!-->
+<!--													</p>-->
+<!--												</div>-->
+<!--												<div class="we-video-info">-->
+<!--													<ul>-->
+<!--														<li>-->
+<!--															<span class="views" data-toggle="tooltip" title="views">-->
+<!--																<i class="fa fa-eye"></i>-->
+<!--																<ins>1.2k</ins>-->
+<!--															</span>-->
+<!--														</li>-->
+<!--														<li>-->
+<!--															<span class="comment" data-toggle="tooltip" title="Comments">-->
+<!--																<i class="fa fa-comments-o"></i>-->
+<!--																<ins>52</ins>-->
+<!--															</span>-->
+<!--														</li>-->
+<!--														<li>-->
+<!--															<span class="like" data-toggle="tooltip" title="like">-->
+<!--																<i class="ti-heart"></i>-->
+<!--																<ins>2.2k</ins>-->
+<!--															</span>-->
+<!--														</li>-->
+<!--														<li>-->
+<!--															<span class="dislike" data-toggle="tooltip" title="dislike">-->
+<!--																<i class="ti-heart-broken"></i>-->
+<!--																<ins>200</ins>-->
+<!--															</span>-->
+<!--														</li>-->
+<!--														<li class="social-media">-->
+<!--															<div class="menu">-->
+<!--																<div class="btn trigger"><i class="fa fa-share-alt"></i></div>-->
+<!--																<div class="rotater">-->
+<!--																	<div class="btn btn-icon"><a href="#" title=""><i class="fa fa-facebook"></i></a></div>-->
+<!--																</div>-->
+<!--																<div class="rotater">-->
+<!--																	<div class="btn btn-icon"><a href="#" title=""><i class="fa fa-twitter"></i></a></div>-->
+<!--																</div>-->
+<!--																<div class="rotater">-->
+<!--																	<div class="btn btn-icon"><a href="#" title=""><i class="fa fa-instagram"></i></a>-->
+<!--																	</div>-->
+<!--																</div>-->
+<!--															</div>-->
+<!--														</li>-->
+<!--													</ul>-->
+<!--												</div>-->
+<!--											</div>-->
+<!--										</div>-->
+<!--										<div class="coment-area">-->
+<!--											<ul class="we-comet">-->
+<!--												<li>-->
+<!--													<div class="comet-avatar">-->
+<!--														<img src="images/resources/user2.png" alt="">-->
+<!--													</div>-->
+<!--													<div class="we-comment">-->
+<!--														<div class="coment-head">-->
+<!--															<h5><a href="" title="">N이 되고싶은 S</a></h5>-->
+<!--															<a class="we-reply" href="#" title="Reply"><i class="fa fa-reply"></i></a>-->
+<!--														</div>-->
+<!--														<p>나는 저 N의 상상력이 신기함,, </p>-->
+<!--													</div>-->
 
-												</li>
-												<li>
-													<div class="comet-avatar">
-														<img src="images/resources/user2.png" alt="">
-													</div>
-													<div class="we-comment">
-														<div class="coment-head">
-															<h5><a href="" title="">아무생각없는사람</a></h5>
-															<a class="we-reply" href="#" title="Reply"><i class="fa fa-reply"></i></a>
-														</div>
-														<p>귀엽다
-															<i class="em em-smiley"></i>
-														</p>
-													</div>
-												</li>
-												<li>
-													<a href="#" title="" class="showmore underline">more comments</a>
-												</li>
-												<li class="post-comment">
-													<div class="comet-avatar">
-														<img src="images/resources/user2.png" alt="">
-													</div>
-													<div class="post-comt-box">
-														<form method="post">
-															<textarea placeholder="Post your comment"></textarea>
-															<div class="add-smiles">
-																<span class="em em-expressionless" title="add icon"></span>
-															</div>
-															<div class="smiles-bunch">
-																<i class="em em---1"></i>
-																<i class="em em-smiley"></i>
-																<i class="em em-anguished"></i>
-																<i class="em em-laughing"></i>
-																<i class="em em-angry"></i>
-																<i class="em em-astonished"></i>
-																<i class="em em-blush"></i>
-																<i class="em em-disappointed"></i>
-																<i class="em em-worried"></i>
-																<i class="em em-kissing_heart"></i>
-																<i class="em em-rage"></i>
-																<i class="em em-stuck_out_tongue"></i>
-															</div>
-															<button type="submit"></button>
-														</form>	
-													</div>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="comet-avatar">-->
+<!--														<img src="images/resources/user2.png" alt="">-->
+<!--													</div>-->
+<!--													<div class="we-comment">-->
+<!--														<div class="coment-head">-->
+<!--															<h5><a href="" title="">아무생각없는사람</a></h5>-->
+<!--															<a class="we-reply" href="#" title="Reply"><i class="fa fa-reply"></i></a>-->
+<!--														</div>-->
+<!--														<p>귀엽다-->
+<!--															<i class="em em-smiley"></i>-->
+<!--														</p>-->
+<!--													</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<a href="#" title="" class="showmore underline">more comments</a>-->
+<!--												</li>-->
+<!--												<li class="post-comment">-->
+<!--													<div class="comet-avatar">-->
+<!--														<img src="images/resources/user2.png" alt="">-->
+<!--													</div>-->
+<!--													<div class="post-comt-box">-->
+<!--														<form method="post">-->
+<!--															<textarea placeholder="Post your comment"></textarea>-->
+<!--															<div class="add-smiles">-->
+<!--																<span class="em em-expressionless" title="add icon"></span>-->
+<!--															</div>-->
+<!--															<div class="smiles-bunch">-->
+<!--																<i class="em em-&#45;&#45;1"></i>-->
+<!--																<i class="em em-smiley"></i>-->
+<!--																<i class="em em-anguished"></i>-->
+<!--																<i class="em em-laughing"></i>-->
+<!--																<i class="em em-angry"></i>-->
+<!--																<i class="em em-astonished"></i>-->
+<!--																<i class="em em-blush"></i>-->
+<!--																<i class="em em-disappointed"></i>-->
+<!--																<i class="em em-worried"></i>-->
+<!--																<i class="em em-kissing_heart"></i>-->
+<!--																<i class="em em-rage"></i>-->
+<!--																<i class="em em-stuck_out_tongue"></i>-->
+<!--															</div>-->
+<!--															<button type="submit"></button>-->
+<!--														</form>	-->
+<!--													</div>-->
+<!--												</li>-->
+<!--											</ul>-->
+<!--										</div>-->
+<!--									</div>-->
+<!--								</div>-->
 								</div>
 							</div><!-- centerl meta -->
 							<div class="col-lg-3">
@@ -488,6 +488,7 @@
 
 	<footer>
 	</footer><!-- footer -->
+
 </div>
 	<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/community/main.min.js"></script>
 	<script src="js/community/script.js"></script>
